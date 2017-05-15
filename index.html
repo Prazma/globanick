@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GlobaNick</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<style>
+			body {
+				background: #e80853;
+				font-family: sans-serif;
+			}
+			.texin {
+				background: #e80853;
+				border: solid;
+				border-width: 1px;
+				border-color: #e80853;
+				border-bottom-color: #bfbfbf;
+				font-size: 30px;
+				color: #ffffff;
+				text-align: center;
+				outline: none;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+			}
+			.texin:focus {
+				border-width: 5px;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+			}
+			#proPor {
+				text-align: center;
+				margin-top: 50px;
+			}
+			#outspan, .txt {
+				font-size: 40px;
+				color: #ffffff;
+			}
+			.subtxt {
+				font-size: 20px;
+				color: #ffffff;
+			}
+			#maPor {
+				text-align: center;
+				margin-top: 50px;
+			}
+			.btn {
+				background: #ffffff;
+				border: solid;
+				border-width: 5px;
+				border-color: #ffffff;
+				font-size: 20px;
+				color: #e80853;
+				border-radius: 10px;
+				box-shadow: 0px 0px 10px #888888;
+				outline: none;
+				padding: 5px;
+			}
+			.btn:hover {
+				background: #f1f1f1;
+				border-color: #f1f1f1;
+				box-shadow: 0px 0px 10px #ffffff;
+			}
+			.btn:focus {
+				background: #f1f1f1;
+				border-color: #f1f1f1;
+				box-shadow: 0px 0px 10px #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="maPor">
+			<span class="txt"><strong>GlobaNick</strong></span><br>
+			<div id="uiO" style="opacity: 0; webkit-transition: 1s; transition: 1s;">
+				<span class="subtxt">Shows your name in different languages</span><br><br><br>
+				<button onclick="init()" class="btn"><strong>START</strong></button>
+			</div>
+		</div>
+		<div id="proPor" style="display: none;">
+			<input id="userInp" class="btn" placeholder="Enter your name" onkeyup="updPut()"><br><br><br>
+			<span id="outspan">Your Name</span>
+			<br><button onclick="clip()" class="btn" style><strong>Copy Text</strong></button>
+		</div>
+		<span class="subtxt" style="position: fixed; bottom: 3px;">(c) Prazma Repos</span>
+		<script>
+			setTimeout( function () {
+				document.getElementById("uiO").style.opacity = "1";
+			}, 1000)
+			function init() {
+				const ma = document.getElementById("maPor");
+				const pro = document.getElementById("proPor");
+				ma.style.display = "none";
+				pro.style.display = "";
+			}
+			function updPut() {
+				const resout = document.getElementById("outspan");
+				const userI = document.getElementById("userInp");
+				var recon = userI.value;
+				var ih = recon.length;
+				resout.innerHTML = "";
+				var i;
+				for(i=0; i<ih; i++){
+					resout.innerHTML += "阿";
+				}
+			}
+		</script>
+	</body>
+</html>
