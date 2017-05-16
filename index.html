@@ -64,44 +64,58 @@
 				border-color: #f1f1f1;
 				box-shadow: 0px 0px 10px #ffffff;
 			}
+			.btnMen {
+				color: #ffffff;
+				position: fixed;
+				font-size: 50px;
+				top: 3px;
+				left: 15px;
+				text-shadow: 0px 0px 5px #ffffff;
+				background: #e80853;
+				border: none;
+				outline: none;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="maPor">
 			<span class="txt"><strong>GlobaNick</strong></span><br>
 			<div id="uiO" style="opacity: 0; webkit-transition: 1s; transition: 1s;">
-				<span id="langInt" class="subtxt">Shows your name in <span id="lanShou">different languages</span></span><br><br><br>
+				<span id="langtro" class="subtxt">Shows your name in <span id="lanShou">different languages</span></span><br><br><br>
 				<button onclick="init()" class="btn"><strong>START</strong></button>
 			</div>
 		</div>
 		<div id="proPor" style="display: none;">
-			<input id="userInp" class="btn" placeholder="Enter your name" onkeyup="updPut()"><br><br><br>
+			<input id="userInp" class="btn" placeholder="Enter your name" onkeyup="updPut()"><br><br>
+			<select class="btn" value="Japanese (Kanji)">
+				`	<option value="jap-kan">Japanese (Kanji)</option>
+			</select>
+			<br><br>
 			<span id="outspan">Your Name</span>
-			<br><button onclick="clip()" class="btn" style><strong>Copy Text</strong></button>
+			<br><br><button id="cop" onclick="clip()" class="btn" style="display: none;"><strong>Copy Text</strong></button>
 		</div>
-		<span class="subtxt" style="position: fixed; bottom: 3px;">(c) Prazma Repos</span>
+		<span>
+		<span class="subtxt" style="position: fixed; bottom: 3px; text-shadow: 0px 0px 5px #ffffff;">(c) Prazma Repos</span>
+		<button class="btnMen" onclick="mench()">≡</button>
 		<script>
 			setTimeout( function () {
 				document.getElementById("uiO").style.opacity = "1";
 			}, 1000)
 			setTimeout( function () {
-				document.getElementById("lanShou").innerHTML = "Japanese Kanji";
+				document.getElementById("lanShou").innerHTML = "<strong>English Characters</strong>";
 			}, 2000)
 			setTimeout( function () {
-				document.getElementById("lanShou").innerHTML = "Chinese Characters";
+				document.getElementById("lanShou").innerHTML = "<strong>Japanese Characters</strong>";
 			}, 3000)
 			setTimeout( function () {
-				document.getElementById("lanShou").innerHTML = "Korean Characters";
+				document.getElementById("lanShou").innerHTML = "<strong>Chinese Characters</strong>";
 			}, 4000)
 			setTimeout( function () {
-				document.getElementById("lanShou").innerHTML = "Japanese Katakana";
+				document.getElementById("lanShou").innerHTML = "<strong>Korean Characters</strong>";
 			}, 5000)
 			setTimeout( function () {
-				document.getElementById("lanShou").innerHTML = "the language you desire";
-			}, 6000)
-			setTimeout( function () {
-				document.getElementById("langInt").innerHTML = "Click <strong class='btn' style='font-size: 10px;'>START</strong> to show your awesome name!";
-			}, 8000)
+				document.getElementById("langtro").innerHTML = "Click <strong class='btn' style='font-size: 10px;'>START</strong> to get started with your awesome name!";
+			}, 7000)
 			function init() {
 				const ma = document.getElementById("maPor");
 				const pro = document.getElementById("proPor");
@@ -113,6 +127,11 @@
 				const userI = document.getElementById("userInp");
 				var recon = userI.value;
 				var ih = recon.length;
+				if(ih==0) {
+					document.getElementById("cop").style.display = "none";
+				}else {
+					document.getElementById("cop").style.display = "";	
+				}
 				resout.innerHTML = "";
 				var i;
 				for(i=0; i<ih; i++){
