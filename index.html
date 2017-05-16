@@ -70,7 +70,7 @@
 		<div id="maPor">
 			<span class="txt"><strong>GlobaNick</strong></span><br>
 			<div id="uiO" style="opacity: 0; webkit-transition: 1s; transition: 1s;">
-				<span class="subtxt">Shows your name in different languages</span><br><br><br>
+				<span id="langInt" class="subtxt">Shows your name in <span id="lanShou">different languages</span></span><br><br><br>
 				<button onclick="init()" class="btn"><strong>START</strong></button>
 			</div>
 		</div>
@@ -84,6 +84,24 @@
 			setTimeout( function () {
 				document.getElementById("uiO").style.opacity = "1";
 			}, 1000)
+			setTimeout( function () {
+				document.getElementById("lanShou").innerHTML = "Japanese Kanji";
+			}, 2000)
+			setTimeout( function () {
+				document.getElementById("lanShou").innerHTML = "Chinese Characters";
+			}, 3000)
+			setTimeout( function () {
+				document.getElementById("lanShou").innerHTML = "Korean Characters";
+			}, 4000)
+			setTimeout( function () {
+				document.getElementById("lanShou").innerHTML = "Japanese Katakana";
+			}, 5000)
+			setTimeout( function () {
+				document.getElementById("lanShou").innerHTML = "the language you desire";
+			}, 6000)
+			setTimeout( function () {
+				document.getElementById("langInt").innerHTML = "Click <strong class='btn' style='font-size: 10px;'>START</strong> to show your awesome name!";
+			}, 8000)
 			function init() {
 				const ma = document.getElementById("maPor");
 				const pro = document.getElementById("proPor");
